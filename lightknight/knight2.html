@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>亡霊騎士事件譚</title>
+    <meta name="keywords" content="事件譚シリーズ,亡霊騎士事件譚,YKTTZの物置">
+    <meta name="description" content="騎士達が辺境での陰謀に立ち向かう中編SRPG「亡霊騎士事件譚」">
+    <!--OGP-->
+    <meta property="og:site_name" content="事件譚シリーズポータルサイト">
+    <meta property="og:title" content="亡霊騎士事件譚">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="騎士達が辺境での陰謀に立ち向かう中編SRPG「亡霊騎士事件譚」">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="twitter:title" content="亡霊騎士事件譚">
+    <meta property="twitter:type" content="騎士達が辺境での陰謀に立ち向かう中編SRPG「亡霊騎士事件譚」">
+    <!--css,js-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/vue-carousel.min.js"></script>
+    <script src="./js/vue-smooth-scroll.min.js"></script>
+</head>
+<body>
+    <header class="k_h2">
+        <h1 id="logo"><a href="./knight2.html"><img src="./assets/logo2.png" alt="亡霊騎士事件譚" /></a></h1>
+        <ul id="menu" class="b_k2">
+            <li><a href="#about" v-smooth-scroll>概要</a></li>
+            <li><a href="#story" v-smooth-scroll>ストーリー</a></li>
+            <li><a href="#character" v-smooth-scroll>登場人物</a></li>
+            <li><a href="#spec" v-smooth-scroll>作品情報</a></li>
+        </ul>
+    </header>
+    <main>
+        <div id="sample">
+            <carousel :per-page="1" :scrollPerPage="false" :autoplay="true" :autoplay-timeout="6000" :loop="true">
+                <slide><img src="./assets/knight2-1.png" alt="サンプル画像1"></slide>
+                <slide><img src="./assets/knight2-2.png" alt="サンプル画像2"></slide>
+                <slide><img src="./assets/knight2-3.png" alt="サンプル画像3"></slide>
+                <slide><img src="./assets/knight2-4.png" alt="サンプル画像4"></slide>
+                <slide><img src="./assets/knight2-5.png" alt="サンプル画像5"></slide>
+                <slide><img src="./assets/knight2-6.png" alt="サンプル画像6"></slide>
+                <slide><img src="./assets/knight2-7.png" alt="サンプル画像7"></slide>
+                <slide><img src="./assets/knight2-8.png" alt="サンプル画像8"></slide>
+                <slide><img src="./assets/knight2-9.png" alt="サンプル画像9"></slide>
+            </carousel>
+        </div>
+        <div id="about">
+            <h2>亡霊騎士事件譚とは？</h2>
+            <p>
+                亡霊騎士事件譚は、シミュレーションRPG制作ツール「SRPG Studio」で作成されたフリーゲームです。<br>
+                全部で10つのマップの中編で、週末の暇つぶし等に向いているボリュームとなっており、<br>
+                「SRPGを遊びたいけど長時間プレイする余裕がない。かといって短編だと物足りない。」<br>
+                という方でも最後まで楽しめます。<br>
+                また、3段階の難易度を用意しており、どの難易度もキャラロスト（※）が無いため、<br>
+                ユニットを失うリスクを心配することなく遊ぶことができます。<br>
+                <br>
+                <span style="font-size: 12px;">※・・・ユニットのHPが0になることによる永久離脱</span>
+            </p>
+        </div>
+        <div id="story">
+            <h2>ストーリー</h2>
+            <p>
+                ある不祥事に関わっていた元老院の貴族が、王都から逃亡した。<br>
+                一方、王都騎士のレイアとライディンは、とある事件の調査のため、<br>
+                仲間と共に亡霊騎士の噂が流れるマウント・アルガスを訪れる。<br>
+                そこで彼女たちが目撃したのは、魔法によって動く骸骨兵士の姿だった。<br>
+                真相を突き止めるため、マウント・アルガスを調査する騎士団は、<br>
+                その地に潜む者たちの陰謀に立ち向かう事となる。<br>
+                果たして騎士団は、その陰謀を阻止することが出来るのだろうか。
+            </p>
+        </div>
+        <div id="character">
+            <h2>主な登場人物</h2>
+            <div class="chara_wrap2">
+                <transition mode="out-in">
+                    <div class="chara_child" v-if="isActive === '0'" :key="0">
+                        <img src="./assets/knight2_chara_1.png" alt="レイア" /><br>
+                        <p class="c_name">レイア</p>
+                        <p class="c_about">主人公。王都騎士団員。<br>
+                        正義感が強く、困っている人を放っておけない性格。
+                        </p>
+                    </div>
+                    <div class="chara_child" v-if="isActive === '1'" :key="1">
+                        <img src="./assets/knight2_chara_2.png" alt="ジェームズ" /><br>
+                        <p class="c_name">ジェームズ</p>
+                        <p class="c_about">
+                        レイアの友人。<br>
+                        魔道士だが、レイアに剣術を教わっている。
+                        </p>
+                    </div>
+                    <div class="chara_child" v-if="isActive === '2'" :key="2">
+                        <img src="./assets/knight2_chara_3.png" alt="エリィ" /><br>
+                        <p class="c_name">エリィ</p>
+                        <p class="c_about">
+                        レイアの従者。<br>
+                        しっかり者で、道具の調達も難なくこなす。
+                        </p>
+                    </div>
+                    <div class="chara_child" v-if="isActive === '3'" :key="3">
+                        <img src="./assets/knight2_chara_4.png" alt="カルロス" /><br>
+                        <p class="c_name">カルロス</p>
+                        <p class="c_about">
+                        レイアの父の部下。<br>
+                        二人の隊員を連れて、レイアたちに同行する。
+                        </p>
+                    </div>
+                    <div class="chara_child" v-if="isActive === '4'" :key="4">
+                        <img src="./assets/knight2_chara_5.png" alt="シフォン" /><br>
+                        <p class="c_name">シフォン</p>
+                        <p class="c_about">
+                        旅の斧使い。<br>
+                        成り行きでレイアたちを手伝うことに。
+                        </p>
+                    </div>
+                    <div class="chara_child" v-if="isActive === '5'" :key="5">
+                        <img src="./assets/knight2_chara_6.png" alt="ライディン" /><br>
+                        <p class="c_name">ライディン</p>
+                        <p class="c_about">
+                        レイアの上司。<br>
+                        亡霊調査の指揮を執る。
+                        </p>
+                    </div>
+                    <div class="chara_child" v-if="isActive === '6'" :key="6">
+                        <img src="./assets/knight2_chara_7.png" alt="ユーリ" /><br>
+                        <p class="c_name">ユーリ</p>
+                        <p class="c_about">
+                        マウント・アルガスでレイアたちが出会った傭兵。<br>
+                        ある理由により騎士団に協力する。
+                        </p>
+                    </div>
+                    <div class="chara_child" v-if="isActive === '7'" :key="7">
+                        <img src="./assets/knight2_chara_8.png" alt="ルシア" /><br>
+                        <p class="c_name">ルシア</p>
+                        <p class="c_about">
+                        ユーリに同行する旅の傭兵。
+                        </p>
+                    </div>
+                    <div class="chara_child" v-if="isActive === '8'" :key="8">
+                        <img src="./assets/knight2_chara_9.png" alt="ジェニス" /><br>
+                        <p class="c_name">ジェニス</p>
+                        <p class="c_about">
+                        グリフォン乗りの傭兵。<br>
+                        マウント・アルガスで活動する傭兵達を指揮しているようだが……？<br>
+
+                        </p>
+                    </div>
+                    <div class="chara_child" v-if="isActive === '9'" :key="9">
+                        <img src="./assets/knight2_chara_10.png" alt="ロシュフォール" /><br>
+                        <p class="c_name">ロシュフォール</p>
+                        <p class="c_about">
+                        王都騎士兼元老院議員。<br>
+                        ある目的のために部下と共に行動している。
+                        </p>
+                    </div>
+                    <div class="chara_child" v-if="isActive === '10'" :key="10">
+                        <img src="./assets/knight2_chara_11.png" alt="ルドルファス" /><br>
+                        <p class="c_name">ルドルファス</p>
+                        <p class="c_about">
+                        王都から逃亡した元老院議員。
+                        </p>
+                    </div>
+                </transition>
+                <ul class="chara-lists">
+                        <li v-on:click="selected('0')" v-bind:class="{active:isActive === '0'}">
+                            <img src="./assets/knight2_chara_1.png" alt="レイア" />
+                        </li>
+                        <li v-on:click="selected('1')" v-bind:class="{active:isActive === '1'}">
+                            <img src="./assets/knight2_chara_2.png" alt="ジェームズ" />
+                        </li>
+                        <li v-on:click="selected('2')" v-bind:class="{active:isActive === '2'}">
+                            <img src="./assets/knight2_chara_3.png" alt="エリィ" />
+                        </li>
+                        <li v-on:click="selected('3')" v-bind:class="{active:isActive === '3'}">
+                            <img src="./assets/knight2_chara_4.png" alt="カルロス" />
+                        </li>
+                        <li v-on:click="selected('4')" v-bind:class="{active:isActive === '4'}">
+                            <img src="./assets/knight2_chara_5.png" alt="シフォン" />
+                        </li>
+                        <li v-on:click="selected('5')" v-bind:class="{active:isActive === '5'}">
+                            <img src="./assets/knight2_chara_6.png" alt="ライディン" />
+                        </li>
+                        <li v-on:click="selected('6')" v-bind:class="{active:isActive === '6'}">
+                            <img src="./assets/knight2_chara_7.png" alt="ユーリ" />
+                        </li>
+                        <li v-on:click="selected('7')" v-bind:class="{active:isActive === '7'}">
+                            <img src="./assets/knight2_chara_8.png" alt="ルシア" />
+                        </li>
+                        <li v-on:click="selected('8')" v-bind:class="{active:isActive === '8'}">
+                            <img src="./assets/knight2_chara_9.png" alt="ジェニス" />
+                        </li>
+                        <li v-on:click="selected('9')" v-bind:class="{active:isActive === '9'}">
+                            <img src="./assets/knight2_chara_10.png" alt="ロシュフォール" />
+                        </li>
+                        <li v-on:click="selected('10')" v-bind:class="{active:isActive === '10'}">
+                            <img src="./assets/knight2_chara_11.png" alt="ルドルファス" />
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <div id="spec">
+            <h2>作品情報</h2>
+            <p>
+                タイトル：亡霊騎士事件譚<br>
+                ジャンル：シミュレーションRPG<br>
+                プレイ人数：1人<br>
+                動作対象OS：Windows10/8/7/Vista SP2<br>
+                ゲームデータ容量：175MB程度<br>
+                対象年齢：12歳以上<br>
+                <br>
+            </p>
+        </div>
+        <a href="https://www.freem.ne.jp/win/game/18090" target="_blank" rel="noopener" class="download">ふりーむからDL</a>
+    </main>
+    <div class="links b_k1" id="knight1">
+        <a href="./knight1.html"><img src="./assets/logo.png" alt="王都騎士事件譚" /></a>
+    </div>
+    <footer class="k_h2">
+        2019 Copyright(C) YKTTZの物置
+    </footer>
+<script>
+new Vue({
+    el:"#character",
+    data:{
+        isActive:'0'
+    },
+    methods:{
+        selected: function(num){
+            this.isActive = num;
+        }
+    }
+})
+new Vue({
+    el:"#sample",
+    components:{
+        'carousel': VueCarousel.Carousel,
+        'slide': VueCarousel.Slide
+    }
+})
+Vue.use(VueSmoothScroll)
+var app = new Vue({
+    el: '#menu'
+})
+</script>
+</body>
+</html>
