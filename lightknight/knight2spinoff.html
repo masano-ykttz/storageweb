@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>傭兵の小事件譚</title>
+    <meta name="keywords" content="事件譚シリーズ,傭兵の小事件譚,YKTTZの物置">
+    <meta name="description" content="ゲージ技を駆使して任務をこなす短編SRPG「傭兵の小事件譚」">
+    <!--OGP-->
+    <meta property="og:site_name" content="事件譚シリーズポータルサイト">
+    <meta property="og:title" content="傭兵の小事件譚">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://masano-ykttz.github.io/storageweb/lightknight/knight2spinoff.html">
+    <meta property="og:image" content="https://masano-ykttz.github.io/storageweb/lightknight/assets/thumb.png">
+    <meta property="og:description" content="ゲージ技を駆使して任務をこなす短編SRPG「傭兵の小事件譚」">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="twitter:title" content="傭兵の小事件譚">
+    <meta property="twitter:type" content="ゲージ技を駆使して任務をこなす短編SRPG「傭兵の小事件譚」">
+    <meta property="twitter:card" content="summary">
+    <!--css,js-->
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icon16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icon32.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="./assets/icon144.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/vue-carousel.min.js"></script>
+    <script src="./js/vue-smooth-scroll.min.js"></script>
+</head>
+<body>
+    <header class="k_h2s">
+        <h1 id="logo"><a href="./knight2spinoff.html"><img src="./assets/mercelogo.png" alt="傭兵の小事件譚" /></a></h1>
+        <ul id="menu" class="b_k2s">
+            <li><a href="#about" v-smooth-scroll>概要</a></li>
+            <li><a href="#story" v-smooth-scroll>ストーリー</a></li>
+            <li><a href="#spec" v-smooth-scroll>作品情報</a></li>
+        </ul>
+    </header>
+    <main>
+        <div id="sample">
+            <carousel :per-page="1" :scrollPerPage="false" :autoplay="true" :autoplay-timeout="6000" :loop="true">
+                <slide><img src="./assets/mercenary2.png" alt="サンプル画像1"></slide>
+                <slide><img src="./assets/mercenary3.png" alt="サンプル画像2"></slide>
+                <slide><img src="./assets/mercenary6.png" alt="サンプル画像3"></slide>
+                <slide><img src="./assets/mercenary4.png" alt="サンプル画像4"></slide>
+                <slide><img src="./assets/mercenary5.png" alt="サンプル画像5"></slide>
+                <slide><img src="./assets/mercenary1.png" alt="サンプル画像6"></slide>
+            </carousel>
+        </div>
+        <div id="about">
+            <h2>傭兵の小事件譚とは？</h2>
+            <p>
+                傭兵の小事件譚は、シミュレーションRPG制作ツール「SRPG Studio」で作成されたフリーゲームです。<br>
+                全部で4つのマップの短編で、ゆっくりじっくりプレイできるノーマルモードと、<br>
+                キャラロスト（※）あり、エンディングまでセーブ不可（中断は可能）のチャレンジモードがあります。<br>
+                どちらのモードでも30分～1時間半程度でクリアできますので暇つぶしには最適です。<br>
+                <br>
+                また、本作では武器攻撃では耐久性ではなく、SP（スキルポイント）システムを採用しており、<br>
+                攻撃を当てたり、ダメージを受けることでSPゲージが蓄積、それを消費することで、<br>
+                特殊な技や必殺攻撃を使用することが出来ます。<br>
+                <br>
+                特殊技を駆使し、傭兵達を上手く操作し、迅速に任務を成功させ、<br>
+                より多くの報酬を得られるようにプレイしましょう。<br>
+                <br>
+                <span style="font-size: 12px;">※・・・ユニットのHPが0になることによる永久離脱</span>
+            </p>
+        </div>
+        <div id="story">
+            <h2>ストーリー</h2>
+            <p>
+                亡き父の後を継ぎ、傭兵団長となった少女ユーリは<br>
+                神秘の残る地「ネイチュリア」の神官から、<br>
+                ある場所を荒らす者たちの討伐依頼を引き受ける。<br>
+            </p>
+        </div>
+        <div id="spec">
+            <h2>作品情報</h2>
+            <p>
+                タイトル：傭兵の小事件譚<br>
+                ジャンル：シミュレーションRPG<br>
+                プレイ人数：1人<br>
+                動作対象OS：Windows10/8/7/Vista SP2<br>
+                ゲームデータ容量：161MB程度<br>
+                対象年齢：全年齢<br>
+                <br>
+            </p>
+        </div>
+        <a href="https://www.freem.ne.jp/win/game/21929" target="_blank" rel="noopener" class="download">ふりーむからDL</a>
+    </main>
+    <div class="links b_k1" id="knight1">
+        <a href="./knight1.html"><img src="./assets/logo.png" alt="王都騎士事件譚" /></a>
+    </div>
+    <div class="links b_k2" id="knight2">
+        <a href="./knight2.html"><img src="./assets/logo2.png" alt="亡霊騎士事件譚" /></a>
+    </div>
+    <footer class="k_h2s">
+        2020 Copyright(C) YKTTZの物置
+    </footer>
+<script>
+new Vue({
+    el:"#character",
+    data:{
+        isActive:'0'
+    },
+    methods:{
+        selected: function(num){
+            this.isActive = num;
+        }
+    }
+})
+new Vue({
+    el:"#sample",
+    components:{
+        'carousel': VueCarousel.Carousel,
+        'slide': VueCarousel.Slide
+    }
+})
+Vue.use(VueSmoothScroll)
+var app = new Vue({
+    el: '#menu'
+})
+</script>
+</body>
+</html>

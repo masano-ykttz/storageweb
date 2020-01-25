@@ -18,11 +18,15 @@ header,footer{
     background-color: #ba2636;
     color:#ccc;
 }
+.k_h2s{
+    background-color: #993A3A;
+    color:#ccc;
+}
 footer{
     padding-top:12px;
     padding-bottom:32px;
 }
-header.k_h1 h1,header.k_h2 h1{
+header.k_h1 h1,header.k_h2 h1,header.k_h2s h1{
     margin: 0;
     padding-top:12px;
 }
@@ -38,6 +42,9 @@ header.k_h1 h1,header.k_h2 h1{
 #knight2{
     background-image: url("./assets/back2.png");
 }
+#knight2s{
+    background-image: url("./assets/back2s.png");
+}
 #topmenu li,.links{
     background-repeat: repeat;
     background-size: cover;
@@ -51,7 +58,7 @@ header.k_h1 h1,header.k_h2 h1{
     background: rgba(0,0,0,0.3);
 }
 #topmenu li a{
-    height:300px;
+    height:240px;
     
 }
 #topmenu li a:hover,.links a:hover{
@@ -101,6 +108,9 @@ ul#menu li a:hover{
     border-bottom:6px double #dc143c;
 }
 
+.m_k2s{
+    height:160px !important;
+}
 h2{
     text-align: center;
     margin-top:36px;
@@ -254,6 +264,11 @@ ul.chara-lists li img{
     left:20%;
     width:60%;
     content:'';
+}
+
+
+.sub_kn2s{
+    height:100px !important;
 }
 
 /* DLボタン */
