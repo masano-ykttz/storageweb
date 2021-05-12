@@ -2,13 +2,13 @@ html,body{
     margin:0;
     padding:0;
     font-size: 12px;
-    background-color: #f0f8ff;
+    background-color: #fffafa;
     color:#232323;
     font-family: 'Noto Sans JP','Arial','Hiragino Kaku Gothic Pro','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo', sans-serif; 
 }
 header,footer{
     text-align: center;
-    background-color: #f0f8ff;
+    background-color: #fffafa;
 }
 .k_h1{
     background-color: #1e50a2;
