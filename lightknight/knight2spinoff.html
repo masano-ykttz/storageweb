@@ -37,14 +37,6 @@
     </header>
     <main>
         <div id="sample">
-            <carousel :per-page="1" :scrollPerPage="false" :autoplay="true" :autoplay-timeout="6000" :loop="true">
-                <slide><img src="./assets/mercenary2.png" alt="サンプル画像1"></slide>
-                <slide><img src="./assets/mercenary3.png" alt="サンプル画像2"></slide>
-                <slide><img src="./assets/mercenary6.png" alt="サンプル画像3"></slide>
-                <slide><img src="./assets/mercenary4.png" alt="サンプル画像4"></slide>
-                <slide><img src="./assets/mercenary5.png" alt="サンプル画像5"></slide>
-                <slide><img src="./assets/mercenary1.png" alt="サンプル画像6"></slide>
-            </carousel>
             <transition mode="out-in">
 			    <div class="sample_child" v-if="isActive === '0'" :key="0">
 			        <img src="./assets/mercenary2.png" alt="サンプル画像1">
