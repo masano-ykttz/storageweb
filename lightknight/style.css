@@ -2,13 +2,13 @@ html,body{
     margin:0;
     padding:0;
     font-size: 12px;
-    background-color: #fffafa;
+    background-color: #f0f8ff;
     color:#232323;
     font-family: 'Noto Sans JP','Arial','Hiragino Kaku Gothic Pro','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo', sans-serif; 
 }
 header,footer{
     text-align: center;
-    background-color: #fffafa;
+    background-color: #f0f8ff;
 }
 .k_h1{
     background-color: #1e50a2;
@@ -212,11 +212,17 @@ main div{
     bottom:84px;
     margin-left:4px;
 }
-ul.chara-lists{
+ul.chara-lists,ul.sample-lists{
     list-style-type: none;
     text-align: center;
     padding-left:0;
     margin-bottom:0;
+}
+ul.sample-lists li{
+    display: inline-block;
+    margin:0 8px;
+    cursor: pointer;
+    overflow: hidden;
 }
 ul.chara-lists li{
     display: inline-block;
@@ -240,6 +246,7 @@ ul.chara-lists li img{
     background-color: #CDCDCD !important;
     border-color:#ff6347 !important;
     transition: background-color 200ms 0s ease-in;
+    color: #fff;
 }
 
 #sample{
