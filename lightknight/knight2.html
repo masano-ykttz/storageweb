@@ -229,28 +229,30 @@
         2019 Copyright(C) YKTTZの物置
     </footer>
 <script>
-new Vue({
-    el:"#character",
-    data:{
-        isActive:'0'
+const characterApp = Vue.createApp({
+    data() {
+        return {
+            isActive: '0'
+        };
     },
-    methods:{
-        selected: function(num){
+    methods: {
+        selected(num) {
             this.isActive = num;
         }
     }
-})
-new Vue({
-    el:"#sample",
-    components:{
+});
+characterApp.mount('#character');
+const sampleApp = Vue.createApp({
+    components: {
         'carousel': VueCarousel.Carousel,
         'slide': VueCarousel.Slide
     }
-})
-Vue.use(VueSmoothScroll)
-var app = new Vue({
-    el: '#menu'
-})
+});
+sampleApp.mount('#sample');
+const menuApp = Vue.createApp({});
+menuApp.use(VueSmoothScroll); 
+
+menuApp.mount('#menu');
 </script>
 </body>
 </html>
