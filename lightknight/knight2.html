@@ -26,31 +26,60 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="./js/vue.min.js"></script>
     <script src="./js/vue-carousel.min.js"></script>
-    <script src="./js/vue-smooth-scroll.min.js"></script>
 </head>
 <body>
     <header class="k_h2">
         <h1 id="logo"><a href="./knight2.html"><img src="./assets/logo2.png" alt="亡霊騎士事件譚" /></a></h1>
         <ul id="menu" class="b_k2">
-            <li><a href="#about" v-smooth-scroll>概要</a></li>
-            <li><a href="#story" v-smooth-scroll>ストーリー</a></li>
-            <li><a href="#character" v-smooth-scroll>登場人物</a></li>
-            <li><a href="#spec" v-smooth-scroll>作品情報</a></li>
+            <li><a href="#about">概要</a></li>
+            <li><a href="#story">ストーリー</a></li>
+            <li><a href="#character">登場人物</a></li>
+            <li><a href="#spec">作品情報</a></li>
         </ul>
     </header>
     <main>
         <div id="sample">
-            <carousel :per-page="1" :scrollPerPage="false" :autoplay="true" :autoplay-timeout="6000" :loop="true">
-                <slide><img src="./assets/knight2-1.png" alt="サンプル画像1"></slide>
-                <slide><img src="./assets/knight2-2.png" alt="サンプル画像2"></slide>
-                <slide><img src="./assets/knight2-3.png" alt="サンプル画像3"></slide>
-                <slide><img src="./assets/knight2-4.png" alt="サンプル画像4"></slide>
-                <slide><img src="./assets/knight2-5.png" alt="サンプル画像5"></slide>
-                <slide><img src="./assets/knight2-6.png" alt="サンプル画像6"></slide>
-                <slide><img src="./assets/knight2-7.png" alt="サンプル画像7"></slide>
-                <slide><img src="./assets/knight2-8.png" alt="サンプル画像8"></slide>
-                <slide><img src="./assets/knight2-9.png" alt="サンプル画像9"></slide>
-            </carousel>
+           <transition mode="out-in">
+			    <div class="sample_child" v-if="isActive === '0'" :key="0">
+			        <img src="./assets/knight2-1.png" alt="サンプル画像1">
+			    </div>
+			    <div class="sample_child" v-if="isActive === '1'" :key="1">
+			        <img src="./assets/knight2-2.png" alt="サンプル画像2">
+			    </div>
+			    <div class="sample_child" v-if="isActive === '2'" :key="2">
+			        <img src="./assets/knight2-3.png" alt="サンプル画像3">
+			    </div>
+			    <div class="sample_child" v-if="isActive === '3'" :key="3">
+			        <img src="./assets/knight2-4.png" alt="サンプル画像4">
+			    </div>
+			    <div class="sample_child" v-if="isActive === '4'" :key="4">
+			        <img src="./assets/knight2-5.png" alt="サンプル画像5">
+			    </div>
+			    <div class="sample_child" v-if="isActive === '5'" :key="5">
+			        <img src="./assets/knight2-6.png" alt="サンプル画像6">
+			    </div>
+			    <div class="sample_child" v-if="isActive === '6'" :key="6">
+			        <img src="./assets/knight2-7.png" alt="サンプル画像7">
+			    </div>
+			    <div class="sample_child" v-if="isActive === '7'" :key="7">
+			        <img src="./assets/knight2-8.png" alt="サンプル画像8">
+			    </div>
+			    <div class="sample_child" v-if="isActive === '8'" :key="8">
+			        <img src="./assets/knight2-9.png" alt="サンプル画像9">
+			    </div>
+			</transition>
+
+			<ul class="sample-lists">
+			    <li v-on:click="selected('0')" v-bind:class="{active:isActive === '0'}">●</li>
+			    <li v-on:click="selected('1')" v-bind:class="{active:isActive === '1'}">●</li>
+			    <li v-on:click="selected('2')" v-bind:class="{active:isActive === '2'}">●</li>
+			    <li v-on:click="selected('3')" v-bind:class="{active:isActive === '3'}">●</li>
+			    <li v-on:click="selected('4')" v-bind:class="{active:isActive === '4'}">●</li>
+			    <li v-on:click="selected('5')" v-bind:class="{active:isActive === '5'}">●</li>
+			    <li v-on:click="selected('6')" v-bind:class="{active:isActive === '6'}">●</li>
+			    <li v-on:click="selected('7')" v-bind:class="{active:isActive === '7'}">●</li>
+			    <li v-on:click="selected('8')" v-bind:class="{active:isActive === '8'}">●</li>
+			</ul>
         </div>
         <div id="about">
             <h2>亡霊騎士事件譚とは？</h2>
@@ -243,9 +272,15 @@ const characterApp = Vue.createApp({
 });
 characterApp.mount('#character');
 const sampleApp = Vue.createApp({
-    components: {
-        'carousel': VueCarousel.Carousel,
-        'slide': VueCarousel.Slide
+    data() {
+        return {
+            isActive: '0'
+        };
+    },
+    methods: {
+        selected(num) {
+            this.isActive = num;
+        }
     }
 });
 sampleApp.mount('#sample');
